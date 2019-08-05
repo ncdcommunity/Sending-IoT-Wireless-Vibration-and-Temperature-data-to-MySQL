@@ -1,5 +1,4 @@
 # Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED
-
 Introducing  NCD’s Long Range IoT Industrial wireless vibration and temperature sensor, boasting up to a 2-mile range the use of a wi-fi mesh networking structure. Incorporating a precision 16-bit vibration and temperature sensor, this device transmits incredibly accurate vibration and temperature records at consumer-described durations.
 
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Vibration-Sensor-Zigmo.png)
@@ -55,7 +54,7 @@ When installing, there would be an option to select whether you want to run Apac
 
 - **Now create a table to visualize data as shown in the picture below.**
 
-![alt tag]()
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/xampp_step4.JPG)
 
 - **Now name the first column as "id".**
 
@@ -69,15 +68,15 @@ When installing, there would be an option to select whether you want to run Apac
 
 ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/xampp_step7.JPG)
 
-- **Now enter the values of other three columns Name = temperature, Type = DECIMAL, Length/Values = 10,2(i.e upto 2 decimal points) and simillarly for humidity and in the last column you can show created time and click on the save button as shown in the picture below.**
+- **Now enter the values of other columns Name = rms_x, Type = DECIMAL, Length/Values = 10,2(i.e upto 2 decimal points) and simillarly for all other values and in the last column you can show created time and click on the save button as shown in the picture below.**
 
-![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/xampp_step8.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/xampp_step8.JPG)
 
 - **Now click on your database name to expand it and it will show your table name, then click on it to view how data is shown, as shown in the picture below.**
 
-![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/xampp_step9.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/xampp_step9.JPG)
 
-![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/xampp_step10.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/xampp_step10.JPG)
 
 That's all with the setting up of XAMPP.
 
@@ -149,7 +148,7 @@ we need to separate wireless sensor records domestically in order that we are ab
 
 - ![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/wirelessdevice%20step2.JPG)
 
-- ![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/wirelessdevice%20step3.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/wirelessdevice%20step3.JPG)
 
 You’ll notice this automatically sets the sensor type for you, you can also give it a name to make it easier to identify. As noted in the info tab, the Serial Device for Config field is optional, and we won’t worry about it right now. The node you have just added effectively works as a filter on incoming sensor data, only passing through data for the mac address, or sensor type if no mac address is present.
 
