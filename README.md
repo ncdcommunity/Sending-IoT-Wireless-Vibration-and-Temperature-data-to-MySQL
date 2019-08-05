@@ -154,18 +154,18 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 
 - **Now go back to your palette and type “debug” into the search field at the top, grab one of these nodes and drag it to the right of your Wireless Gateway**
 
-![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/debug_wirelessdevice_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/debug_wirelessdevice_step1.JPG)
 
 - **Double click on it and click done**
 
-![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/debug_wirelessdevice_step2.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/debug_wirelessdevice_step2.JPG)
 
 # Adding Function Nodes
 The function node is used to run JavaScript code against the msg object. The function node accepts a msg object as input and can return 0 or more message objects as output. This message object must have a payload property (msg.payload), and usually has other properties depending on the proceeding nodes.
 
 - **Now grab a “function” node from the palette, and place it to the right of the Temp/Hum node.**
 
-- ![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/temperature_function_node_step1.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step1.JPG)
 
 - **Double click on the node to open up the configuration options.**
 
