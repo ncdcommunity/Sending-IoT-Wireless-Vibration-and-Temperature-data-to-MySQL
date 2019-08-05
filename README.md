@@ -171,48 +171,60 @@ The function node is used to run JavaScript code against the msg object. The fun
 
 Here you have to write little javacript code to create a condition,so the data is sent to the MySQL database. 
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/function_node_step2.JPG)
+```
+rms_x = msg.payload.rms_x
+rms_y = msg.payload.rms_y
+rms_z = msg.payload.rms_z
+max_x = msg.payload.max_x
+max_y = msg.payload.max_y
+max_z = msg.payload.max_z
+min_x = msg.payload.min_x
+min_y = msg.payload.min_y
+min_z = msg.payload.min_z
+temperature = msg.payload.temperature
+msg.topic = "INSERT INTO vibration_temperature ( `rms_x`, `rms_y`, `rms_z`, `max_x`, `max_y`, `max_z`, `min_x`, `min_y`, `min_z`, `temperature`) VALUES ( "+ rms_x +", "+ rms_y +", "+ rms_z +", "+ max_x +", "+ max_y +", "+ max_z +", "+ min_x +", "+ min_y +", "+ min_z +", "+ temperature +");"
+return msg;
 
-- **Now you have add "mysql" node to store data, check your palette if it is present there or you can click  on the three bars present right side of deploy button as shown in the picture below**
+```
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/Manage_pallette_step1.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step2.JPG)
+
+- **Now you have to add "mysql" node to store data, check your palette if it is present there or you can click  on the three bars present right side of deploy button as shown in the picture below**
+
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step1.JPG)
 
 - **Now click on the "Manage palette" button.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/Manage_pallette_step2.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step2.JPG)
 
 - **Now search for mysql and click on the 'install' button as shown in the picture.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/Manage_pallette_step3.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step3.JPG)
 
 Once its done, you'll see "mysql" node is present in the palette. 
 
 - **Now grab the "mysql" node from the palette and double click on it to open up configuration options.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/MySQL_node_step1.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step1.JPG)
 
 - **Write your database name as you created earlier and give a name to it, then click on the pencil icon next to the Database to edit sqldatabase node.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/MySQL_node_step2.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step2.JPG)
 
 - **Now add User = root i.e by default in the xampp and password is blank.You can also create user and password enter that here, then enter your database name and time zone(otional) and then click update and done**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/MySQL_node_step3.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step3.JPG)
 
-- **Now you'll see your database node shows connected**
+- **Now you'll see your database node shows connected,Now connect all the wires as shown in the picture.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/MySQL_node_step4.JPG)
-
-- **Now connect all the wires as shown in the picture.**
-
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/Final_wire_Connection.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_wire_connection.JPG)
 
 - **Now hit the deploy button and you'll database node shows "ok", its means data is sending**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-of-Wireless-Temperature-and-Humidity-Sensor-to-MySQL/blob/master/final_flow.JPG)
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_flow.JPG)
 
 # OUTPUT
 
 **Here you can visualize the data coming in.**
 
-- ![alt tag](https://github.com/rjrajbir/Sending-Data-o
+- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/output.JPG)
