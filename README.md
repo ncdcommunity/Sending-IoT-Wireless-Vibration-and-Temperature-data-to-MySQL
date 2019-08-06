@@ -3,7 +3,7 @@ Introducing  NCD’s Long Range IoT Industrial wireless vibration and temperatur
 
 ![alt tag](https://github.com/rjrajbir/Node-red-with-Temperature-and-Vibration-Sensor/blob/master/Vibration-Sensor-Zigmo.png)
 
- For the duration of Power-Up, this vibration sensor learns “normal” base-line vibration from the monitored device. This base-line vibration is subtracted from regular sampled vibration readings to improve applicable vibration data. Preferably, the monitored device must be off even as the sensor is mastering. Once the sensor stabilizes and starts sending information, the device/equipment being monitored can be powered on. This business IoT wireless vibration sensor samples 3-axis of vibration data for 100ms after which calculate RMS, maximum, and minimal vibration readings. This sensor combines these records with temperature data in a data packet and transmits the result to modems and gateways in the wi-fi variety. Once the transmission is complete, the vibration sensor is going lower back to sleep, therefore minimizing power consumption. 
+ For the duration of Power-Up, this vibration sensor learns “normal” base-line vibration from the monitored device. This base-line vibration is subtracted from regular sampled vibration readings to improve applicable vibration data. Preferably, the monitored device must be off even as the sensor is mastering. Once the sensor stabilizes and starts sending information, the device/equipment being monitored can be powered on. This business IoT wireless vibration sensor samples 3-axis of vibration data for 100ms after which calculate RMS, maximum, and minimal vibration readings. This sensor combines these records with temperature data in a data packet and transmits the result to modems and gateways in the wireless variety. Once the transmission is complete, the vibration sensor is going lower back to sleep, therefore minimizing power consumption. 
 
 Powered by using just 2 AA batteries and operational life of 500,000 wireless transmissions, a ten years battery life can be expected relying on environmental conditions and the data transmission interval. Optionally, this sensor may be externally powered, making it a perfect choice for wireless vibration monitoring device for industrial equipment. With an open communication protocol, this sensor transmits hardware-encrypted data that may be included with just about any control system or gateway. Data can be transmitted to a laptop, a raspberry pi, to Losant IoT cloud, microsoft® azure® IoT, and an embedded gadget all at the equal time. Sensor parameters and wireless transmission settings can be modified using labview® tracking software on a computer pc.
 
@@ -146,9 +146,9 @@ we need to separate wireless sensor records domestically in order that we are ab
 
 - **select the serial device from the drop down that you used for the Wireless Gateway, now click the magnifying glass next to “Mac Address” and select one of the available options.**
 
-- ![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/wirelessdevice%20step2.JPG)
+![alt tag](https://github.com/rjrajbir/Creating-Email-Alerts-With-Node-Red-Of-NCD-Wireless-Temperature-and-Humidity-sensor/blob/master/wirelessdevice%20step2.JPG)
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/wirelessdevice%20step3.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/wirelessdevice%20step3.JPG)
 
 You’ll notice this automatically sets the sensor type for you, you can also give it a name to make it easier to identify. As noted in the info tab, the Serial Device for Config field is optional, and we won’t worry about it right now. The node you have just added effectively works as a filter on incoming sensor data, only passing through data for the mac address, or sensor type if no mac address is present.
 
@@ -163,9 +163,9 @@ You’ll notice this automatically sets the sensor type for you, you can also gi
 # Adding Function Nodes
 The function node is used to run JavaScript code against the msg object. The function node accepts a msg object as input and can return 0 or more message objects as output. This message object must have a payload property (msg.payload), and usually has other properties depending on the proceeding nodes.
 
-- **Now grab a “function” node from the palette, and place it to the right of the Temp/Hum node.**
+- **Now grab a “function” node from the palette, and place it to the right of the Vib/Temp node.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step1.JPG)
 
 - **Double click on the node to open up the configuration options.**
 
@@ -187,44 +187,44 @@ return msg;
 
 ```
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step2.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/function_node_step2.JPG)
 
 - **Now you have to add "mysql" node to store data, check your palette if it is present there or you can click  on the three bars present right side of deploy button as shown in the picture below**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step1.JPG)
 
 - **Now click on the "Manage palette" button.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step2.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step2.JPG)
 
 - **Now search for mysql and click on the 'install' button as shown in the picture.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step3.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/Manage_palette_step3.JPG)
 
 Once its done, you'll see "mysql" node is present in the palette. 
 
 - **Now grab the "mysql" node from the palette and double click on it to open up configuration options.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step1.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step1.JPG)
 
 - **Write your database name as you created earlier and give a name to it, then click on the pencil icon next to the Database to edit sqldatabase node.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step2.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step2.JPG)
 
 - **Now add User = root i.e by default in the xampp and password is blank.You can also create user and password enter that here, then enter your database name and time zone(otional) and then click update and done**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step3.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/mysql_node_step3.JPG)
 
 - **Now you'll see your database node shows connected,Now connect all the wires as shown in the picture.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_wire_connection.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_wire_connection.JPG)
 
 - **Now hit the deploy button and you'll database node shows "ok", its means data is sending**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_flow.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/final_flow.JPG)
 
 # OUTPUT
 
 **Here you can visualize the data coming in.**
 
-- ![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/output.JPG)
+![alt tag](https://github.com/rjrajbir/Wireless-Vibration-and-Temperature-data-to-MySQL-using-Node-RED/blob/master/output.JPG)
